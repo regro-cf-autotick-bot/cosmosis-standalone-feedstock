@@ -12,12 +12,8 @@ export MINUIT2_INC=${PREFIX}/include/Minuit2
 # need to make sure the setupo can find the source
 export COSMOSIS_SRC_DIR=`pwd`/cosmosis
 
-# these should not be packaged :(
+# these should not be packaged - they were at some point - being safe!
 find cosmosis/. -name "*.so" -type f -delete
 find cosmosis/. -name "*.o" -type f -delete
-
-# sdist is also missing files!
-cp ${RECIPE_DIR}/handler.c cosmosis/runtime/.
-cp ${RECIPE_DIR}/minuit_wrapper.cpp cosmosis/samplers/minuit/.
 
 ${PYTHON} -m pip install . -vv
