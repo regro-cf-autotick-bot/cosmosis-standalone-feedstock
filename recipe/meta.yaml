@@ -1,5 +1,5 @@
 {% set name = "cosmosis-standalone" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4703ffd917efaf51a84a3f286517e7fcf5767e8c062d77f293160265ce5450aa
+  sha256: 76a9b78bde7b5331ff7cb92aeb9b2c5aed5aecb90c8347f0e031abc1b9059696
   patches:
     - setup.py-env-0000.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   ignore_run_exports:
     - python
@@ -49,7 +49,7 @@ about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/
   license: BSD-2-Clause AND LicenseRef-non-commerical-use-only
   license_file: LICENSE
-  summary: 'A stand-alone installation of the CosmoSIS project.'
+  summary: A stand-alone installation of the CosmoSIS project.
 
 extra:
   recipe-maintainers:
