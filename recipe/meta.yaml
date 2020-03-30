@@ -1,5 +1,5 @@
 {% set name = "cosmosis-standalone" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 76a9b78bde7b5331ff7cb92aeb9b2c5aed5aecb90c8347f0e031abc1b9059696
+  sha256: bcca317de0489abb9355b189ab5e0f1690fd3c9df9d3ba419707c845067932d8
   patches:
     - setup.py-env-0000.patch
 
