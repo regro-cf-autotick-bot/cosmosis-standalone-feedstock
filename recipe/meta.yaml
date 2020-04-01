@@ -12,11 +12,10 @@ source:
     - setup.py-env-0000.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   ignore_run_exports:
     - python
-    - {{ mpi }}
 
 requirements:
   build:
@@ -44,6 +43,11 @@ requirements:
 test:
   imports:
     - cosmosis
+  commands:
+    - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3${SHLIB_EXT}
+    - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi${SHLIB_EXT}
+    - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord${SHLIB_EXT}
+    - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi${SHLIB_EXT}
 
 about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/
