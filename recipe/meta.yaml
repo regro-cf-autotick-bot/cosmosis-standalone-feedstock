@@ -43,11 +43,17 @@ requirements:
 test:
   imports:
     - cosmosis
+    - cosmosis.samplers
+  requires:
+    - pytest
+  source_files:
+    - test
   commands:
-    - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3${SHLIB_EXT}
-    - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi${SHLIB_EXT}
-    - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord${SHLIB_EXT}
-    - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi${SHLIB_EXT}
+    - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3.so
+    - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi.so
+    - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord.so
+    - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi.so
+    - cd test && pytest -vvs test
 
 about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/
