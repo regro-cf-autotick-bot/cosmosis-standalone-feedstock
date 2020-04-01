@@ -1,5 +1,5 @@
 export LAPACK_LINK="-llapack ${LDFLGAS}"
-export MPIFX=mpifort
+export MPIFC=mpifort
 
 export USER_CXXFLAGS=${CXXFLAGS}
 export USER_CFLAGS=${CFLAGS}
