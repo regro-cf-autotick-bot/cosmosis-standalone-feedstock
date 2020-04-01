@@ -53,7 +53,7 @@ test:
     - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi.so
-    - cd test && pytest -vvs test
+    - pytest -vvs test/*.py
 
 about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/
