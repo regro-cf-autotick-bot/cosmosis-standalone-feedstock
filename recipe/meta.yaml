@@ -47,6 +47,7 @@ requirements:
 test:
   requires:
     - pytest
+    - git
   source_files:
     - test
   imports:
