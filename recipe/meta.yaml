@@ -43,6 +43,8 @@ requirements:
     - minuit2_standalone
 
 test:
+  source_files:
+    - test
   imports:
     - cosmosis
     - cosmosis.samplers
@@ -51,6 +53,10 @@ test:
     - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi.so
+    - pushd test
+    - ${PYTHON} test_samplers.py test_multinest
+    - ${PYTHON} test_samplers.py test_dynesty
+    - popd
 
 about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/
