@@ -10,6 +10,7 @@ source:
   sha256: bcca317de0489abb9355b189ab5e0f1690fd3c9df9d3ba419707c845067932d8
   patches:
     - setup.py-env-0000.patch
+    - datablock-makefile-0001.patch
 
 build:
   number: 2
