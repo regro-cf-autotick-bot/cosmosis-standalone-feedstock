@@ -43,11 +43,11 @@ requirements:
     - scipy
     - mpi4py
     - minuit2_standalone
+    - git
 
 test:
   requires:
     - pytest
-    - git
   source_files:
     - test
   imports:
