@@ -1,8 +1,8 @@
 export LAPACK_LINK="-llapack ${LDFLGAS}"
 export MPIFC=mpifort
 
-export USER_CXXFLAGS=${CXXFLAGS}
-export USER_CFLAGS=${CFLAGS}
+export USER_CXXFLAGS="${CXXFLAGS} ${LDFLAGS}"
+export USER_CFLAGS="${CFLAGS} ${LDFLAGS}"
 export USER_FFLAGS=${FFLAGS}
 export USER_LDFLAGS=${LDFLAGS}
 
