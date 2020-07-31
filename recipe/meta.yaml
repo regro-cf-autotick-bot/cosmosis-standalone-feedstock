@@ -10,9 +10,11 @@ source:
   sha256: bcca317de0489abb9355b189ab5e0f1690fd3c9df9d3ba419707c845067932d8
   patches:
     - setup.py-env-0000.patch
+    - datablock-makefile-0001.patch
+    - runtime-makefile-0002.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
   ignore_run_exports:
     - python
@@ -22,6 +24,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]    
   host:
     - python
     - pip
@@ -39,8 +43,13 @@ requirements:
     - scipy
     - mpi4py
     - minuit2_standalone
+    - git
 
 test:
+  requires:
+    - pytest
+  source_files:
+    - test
   imports:
     - cosmosis
     - cosmosis.samplers
@@ -49,6 +58,9 @@ test:
     - test -f ${SP_DIR}/cosmosis/samplers/multinest/multinest_src/libnest3_mpi.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord.so
     - test -f ${SP_DIR}/cosmosis/samplers/polychord/polychord_src/libchord_mpi.so
+    - pushd test
+    - ${PYTHON} test_samplers.py test_multinest
+    - popd
 
 about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/

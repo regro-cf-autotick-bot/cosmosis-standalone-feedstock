@@ -1,0 +1,12 @@
+--- a/cosmosis/datablock/Makefile
++++ b/cosmosis/datablock/Makefile
+@@ -1,7 +1,7 @@
+ include ${COSMOSIS_SRC_DIR}/config/compilers.mk
+ 
+-USER_CFLAGS=$(PEDANTIC_C_FLAGS) -Werror
+-USER_CXXFLAGS=$(PEDANTIC_C_FLAGS)
++# USER_CFLAGS=$(PEDANTIC_C_FLAGS) -Werror
++# USER_CXXFLAGS=$(PEDANTIC_C_FLAGS)
+ 
+ detected_OS := $(shell uname -s)
+ ifeq ($(detected_OS),Darwin)
