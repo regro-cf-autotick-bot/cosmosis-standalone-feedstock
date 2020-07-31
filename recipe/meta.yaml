@@ -11,6 +11,7 @@ source:
   patches:
     - setup.py-env-0000.patch
     - datablock-makefile-0001.patch
+    - runtime-makefile-0002.patch
 
 build:
   number: 2
