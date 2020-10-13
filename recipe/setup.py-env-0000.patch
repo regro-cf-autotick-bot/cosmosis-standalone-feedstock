@@ -10,4 +10,3 @@ index dd4002f..99b74fc 100644
 -
 +    subprocess.check_call(["make"], cwd="cosmosis")
 +
- 
