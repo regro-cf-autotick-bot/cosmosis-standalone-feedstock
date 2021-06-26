@@ -14,7 +14,7 @@ source:
     - runtime-makefile-0002.patch
 
 build:
-  number: 4
+  number: 5
   skip: true  # [win]
   ignore_run_exports:
     - python
@@ -25,7 +25,7 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}
     - llvm-openmp  # [osx]
-    - libgomp      # [linux]    
+    - libgomp      # [linux]
   host:
     - python
     - pip
@@ -65,7 +65,10 @@ test:
 about:
   home: https://bitbucket.org/joezuntz/cosmosis/src/master/
   license: BSD-2-Clause AND LicenseRef-non-commerical-use-only
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - multinest_LICENSE
+    - polychord_LICENSE
   summary: A stand-alone installation of the CosmoSIS project.
 
 extra:
